@@ -1,0 +1,21 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "target": "ES2022",
+    "module": "ES2020",
+    "lib": ["ES2022", "DOM"],
+    "skipLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@turbovets-secure-taskmgr/auth": ["libs/auth/src/index.ts"],
+      "@turbovets-secure-taskmgr/data": ["libs/data/src/index.ts"]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}
