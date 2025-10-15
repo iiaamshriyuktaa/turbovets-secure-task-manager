@@ -47,8 +47,11 @@
       "defaultConfiguration": "production"
     },
     "serve": {
-      "continuous": true,
       "executor": "@angular/build:dev-server",
+      "options": {
+        "buildTarget": "dashboard:build:development",
+        "proxyConfig": "apps/dashboard/proxy.conf.json"        
+      },
       "configurations": {
         "production": {
           "buildTarget": "dashboard:build:production"
@@ -77,13 +80,13 @@
       }
     },
     "serve-static": {
-      "continuous": true,
       "executor": "@nx/web:file-server",
       "options": {
-        "buildTarget": "dashboard:build",
+        "buildTarget": "dashboard:build:production",
         "staticFilePath": "dist/apps/dashboard/browser",
         "spa": true
       }
     }
   }
 }
+

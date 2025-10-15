@@ -1,0 +1,39 @@
+<section class="p-4 space-y-3">
+  <h2 class="text-xl font-semibold">Tasks Board</h2>
+
+  <form class="flex gap-2" (ngSubmit)="createTask()">
+    <input
+      class="border rounded px-2 py-1 flex-1"
+      [(ngModel)]="newTitle"
+      name="title"
+      placeholder="New task title"
+      required
+    />
+    <button class="border rounded px-3 py-1" type="submit" [disabled]="!newTitle">
+      Add
+    </button>
+  </form>
+
+  <ul class="divide-y mt-2">
+    <li *ngFor="let t of tasks" class="py-2 flex items-center justify-between">
+      <div>
+        <div class="font-medium" [class.line-through]="t.status === 'done'">
+          {{ t.title }}
+        </div>
+        <div class="text-xs text-gray-500">
+          {{ t.category || '—' }} • {{ t.status }}
+        </div>
+      </div>
+      <div class="flex gap-2">
+        <button type="button" class="text-sm underline" (click)="toggle(t)">
+          {{ t.status === 'done' ? 'Reopen' : 'Mark Done' }}
+        </button>
+        <button type="button" class="text-sm text-red-600 underline" (click)="remove(t)">
+          Delete
+        </button>
+      </div>
+    </li>
+  </ul>
+</section>
+
+

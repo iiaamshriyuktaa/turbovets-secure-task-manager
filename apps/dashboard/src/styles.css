@@ -1,1 +1,31 @@
 /* You can add global styles to this file, and also import other style files */
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+}
+
+app-root, app-login, app-tasks {
+  display: block;
+  height: 100%;
+}
+
+body > app-root {
+  display: grid;
+  place-items: center;
+}
+
+form {
+  display: grid;
+  gap: 12px;
+  width: min(360px, 90vw);
+}
+
+input, button {
+  padding: 10px 12px;
+  font-size: 14px;
+}
+
+button {
+  cursor: pointer;
+}
